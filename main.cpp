@@ -1,33 +1,31 @@
 /**----------------------------------------------------------------------------
  * @target      Nucleo F411RE
- * @libraries   mbed drivers only
- * @date        12-February-2015
+ * @libraries   mbed drivers and rtos
+ * @date        14-February-2015
  * @author      Hotboards
  * @brief       This is a project build with the mbed libraries ready to compile
- * using GNU ARM compiler and eclipse, it has only the driver libraries at the
- * moment. Should be use as a template only copy and paste to generate a new
- * independent project, or use egit to clone from the github repository.
- * in folder Debug you will find .hex, .elf and .bin file to program your board
- * check the readme file for more information
+ * using GNU ARM compiler and eclipse, it has only the driver libraries and the
+ * rtx OS at the moment. Should be use as a template only copy and paste to
+ * generate a new independent project, or use egit to clone from the github
+ * repository. In folder Debug you will find .hex, .elf and .bin file to program,
+ * your board check the readme file for more information.
+ * By default printf and scanf with floating point number are disable
 -----------------------------------------------------------------------------*/
 #include "mbed.h"
-#include "rtos.h"
 
-DigitalOut led1(LED1);
-DigitalOut led2(LED2);
+DigitalOut myled(LED1);
+Serial device(PA_2, PA_3);// tx, rx
 
-void led2_thread(void const *args) {
-    while (true) {
-        led2 = !led2;
-        Thread::wait(1000);
-    }
-}
+int main()
+{
+    device.baud(9600);//init serial port
 
-int main() {
-    Thread thread(led2_thread);
-
-    while (true) {
-        led1 = !led1;
-        Thread::wait(500);
+    while(1)
+    {
+        myled = 1; // LED is ON
+        wait(0.2); // 200 ms
+        myled = 0; // LED is OFF
+        wait(1.0); // 1 sec
+        device.printf("Hola Amigos\r\n");
     }
 }

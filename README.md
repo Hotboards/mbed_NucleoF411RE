@@ -2,7 +2,7 @@
 
 Now is easier than ever to use **mbed** library offline with eclipse and GNU ARM. In this repository you will find a eclipse project with mbed library for ST [**NucleoF411RE**](http://developer.mbed.org/platforms/ST-Nucleo-F411RE/) board.
 
-**Updated to** mbed tag 93
+**Updated to** mbed tag 93 with rtos library
 
 ##Prerequisits
 

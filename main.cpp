@@ -11,20 +11,23 @@
  * check the readme file for more information
 -----------------------------------------------------------------------------*/
 #include "mbed.h"
+#include "rtos.h"
 
-DigitalOut myled(LED1);
-Serial device(PA_2, PA_3);// tx, rx
+DigitalOut led1(LED1);
+DigitalOut led2(LED2);
 
-int main()
-{
-    device.baud(9600);//init serial port
+void led2_thread(void const *args) {
+    while (true) {
+        led2 = !led2;
+        Thread::wait(1000);
+    }
+}
 
-    while(1)
-    {
-        myled = 1; // LED is ON
-        wait(0.2); // 200 ms
-        myled = 0; // LED is OFF
-        wait(1.0); // 1 sec
-        device.printf("Hola Amigos\r\n");
+int main() {
+    Thread thread(led2_thread);
+
+    while (true) {
+        led1 = !led1;
+        Thread::wait(500);
     }
 }

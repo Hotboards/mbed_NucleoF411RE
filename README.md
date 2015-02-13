@@ -2,6 +2,8 @@
 
 Now is easier than ever to use **mbed** library offline with eclipse and GNU ARM. In this repository you will find a eclipse project with mbed library for ST [**NucleoF411RE**](http://developer.mbed.org/platforms/ST-Nucleo-F411RE/) board.
 
+**Updated to** mbed tag 93
+
 ##Prerequisits
 
 You need to have installed [**GNU ARM** compiler](https://launchpad.net/gcc-arm-embedded) and [**Eclipse C/C++** IDE](http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers/lunasr1a) within [**GNU ARM Eclipse Plugin**](http://gnuarmeclipse.livius.net/blog/), check the following links in order to make the setup

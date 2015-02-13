@@ -1,0 +1,6 @@
+# Do not version the output folder
+/Debug/
+/mbed/.temp/
+/.settings
+
+

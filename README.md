@@ -44,6 +44,12 @@ Click on Next, wait and then Next, in this window you have to **Browse** your ec
 
 Now you have a new project in Eclipse, open the file **main.cpp** and start coding in mbed style!!. By the way if you do not want to keep versioning your new project just right click and the **Team -> Disconnect**.
 
+##Toolchain Path
+
+Update the compiler path from this project, by the default your toolchain should be place it in **C:\Lunarm\gcc-arm\bin**, to change this path just select your project on the **Project Explorer**, press **Alt + Enter** then on **Toolchains** tab **Browse** for the **bin** folder of your toolcahin
+
+![img6.png](img/img6.png)
+
 ##Programing your board
 
 Is the same as you do with mbed online, every time you compile your project, in folder **Debug** you will find a **.bin** file, just copy and paste it in your Nucleo Drive.
